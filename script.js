@@ -4,7 +4,9 @@ console.log("Welcome :)")
 let humanPoints=0;
 let computerPoints=0;
 
-for (let i=1; i<=5; i++) {
+let numberOfRounds=prompt("How many rounds would you like to play?");
+
+for (let i=1; i<=numberOfRounds; i++) {
     // Intro text
     console.log("##################################")
     console.log("# Round " + i + "                        #")
