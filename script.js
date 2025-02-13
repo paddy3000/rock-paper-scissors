@@ -1,8 +1,10 @@
 
 console.log("Welcome :)")
 
+let humanPoints=0;
+let computerPoints=0;
 
-for (let i=1; i<=1; i++) {
+for (let i=1; i<=5; i++) {
     // Intro text
     console.log("##################################")
     console.log("# Round " + i + "                        #")
@@ -19,12 +21,19 @@ for (let i=1; i<=1; i++) {
 
   // Decide the winner
   if (humanChoice===computerChoice) {
-    let winner="It's a tie!";
+    console.log("It's a tie!");
   } else if (humanChoice==="Rock" && computerChoice=="Scissors" || humanChoice==="Paper" && computerChoice=="Rock" || humanChoice==="Scissors" && computerChoice=="Paper") {
-    winner="You win :)"
+    console.log("You win :)");
+    humanPoints++;
   } else if (humanChoice==="Rock" && computerChoice=="Paper" || humanChoice==="Paper" && computerChoice=="Scissors" || humanChoice==="Scissors" && computerChoice=="Rock") {
-    winner="Unlucky :("
+    console.log("Unlucky :(");
+    computerPoints++;
   } 
-  console.log(winner);
+  console.log("");
 
+  // Display running total
+  console.log("Running total:");
+  console.log("Human points: " + humanPoints + ", Computer points: " + computerPoints);
+  console.log("");
+ 
 }
