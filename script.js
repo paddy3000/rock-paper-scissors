@@ -5,11 +5,36 @@ let humanPoints=0;
 let computerPoints=0;
 
 const buttons=document.querySelectorAll("button");
+let humanChoice="";
+
+// playRound function
+playRound = function(humanChoice) {
+  let computerChoiceN=Math.floor(Math.random()*3);
+  let computerChoice=["rock", "paper", "scissors"][computerChoiceN];
+  console.log("Computer has chosen: " + computerChoice);
+
+  // Decide the winner
+  if (humanChoice===computerChoice) {
+    console.log("It's a tie!");
+  } else if (humanChoice==="rock"     && computerChoice=="scissors" || 
+             humanChoice==="paper"    && computerChoice=="rock" || 
+             humanChoice==="scissors" && computerChoice=="paper") {
+    console.log("You win :)");
+    humanPoints++;
+  } else if (humanChoice==="rock"     && computerChoice=="paper" || 
+             humanChoice==="paper"    && computerChoice=="scissors" || 
+             humanChoice==="scissors" && computerChoice=="rock") {
+    console.log("Unlucky :(");
+    computerPoints++;
+  } 
+}
 
 buttons.forEach((button) => {
     button.addEventListener("click", function (e) {
-        console.log(e.target);
-        e.target.setAttribute("class", "button-clicked");
+        e.target.setAttribute("class", "button-clicked"); // Update button formatting
+        humanChoice=e.target.getAttribute("id"); // Get humanChoice as variable from button
+
+        playRound(humanChoice); // run playRound function
     });
   });
 
