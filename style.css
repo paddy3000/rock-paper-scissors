@@ -1,0 +1,17 @@
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0px 100px;
+    align-items: center;
+    flex-direction: row;
+}
+
+#rock,
+#paper,
+#scissors {
+    flex: 1;
+    font-size: large;
+    max-width: 200px;
+}
