@@ -4,6 +4,7 @@
 
 p {
     text-align: center;
+    font-size: 20px;
 }
 
 /* Buttons container */
@@ -23,6 +24,11 @@ button {
 }
 
 /* Clicked button */
+.button-clicked,
+.button-unclicked {
+    padding: 20px;
+    border-radius: 10px;
+}
 .button-unclicked {
     background-color: lightblue;
     color: black;
@@ -34,4 +40,3 @@ button {
     color: white;
     font-weight: bold;
 }
-
