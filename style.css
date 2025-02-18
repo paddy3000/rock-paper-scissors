@@ -1,4 +1,8 @@
-/* Buttons */
+h1 {
+    text-align: center;
+}
+
+/* Buttons container */
 .buttons {
     display: flex;
     justify-content: center;
@@ -8,6 +12,7 @@
     flex-direction: row;
 }
 
+/* Individual buttons */
 #rock,
 #paper,
 #scissors {
