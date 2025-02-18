@@ -4,6 +4,14 @@ console.log("Welcome :)")
 let humanPoints=0;
 let computerPoints=0;
 
+const buttons=document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+    button.addEventListener("click", function (e) {
+        console.log(e.target);
+        e.target.setAttribute("class", "button-clicked");
+    });
+  });
 
 // let numberOfRounds=prompt("How many rounds would you like to play?");
 
