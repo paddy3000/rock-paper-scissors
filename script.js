@@ -1,40 +1,69 @@
 
 console.log("Welcome :)")
 
+const buttons=document.querySelectorAll("button");
+
+const results=document.querySelector(".results");
+
+let letsPlay=true;
 let humanPoints=0;
 let computerPoints=0;
-
-const buttons=document.querySelectorAll("button");
-let humanChoice="";
 
 // playRound function
 playRound = function(humanChoice) {
   let computerChoiceN=Math.floor(Math.random()*3);
   let computerChoice=["rock", "paper", "scissors"][computerChoiceN];
-  console.log("Computer has chosen: " + computerChoice);
+
+  // Display computer choice on screen  
+  const computerChoiceText=document.createElement("p");
+  computerChoiceText.innerHTML="Paddy has chosen <b>" + computerChoice + "</b>";
+  results.appendChild(computerChoiceText);
 
   // Decide the winner
+  const resultsText=document.createElement("p");
+
   if (humanChoice===computerChoice) {
-    console.log("It's a tie!");
+    resultsText.textContent="It's a tie";
   } else if (humanChoice==="rock"     && computerChoice=="scissors" || 
              humanChoice==="paper"    && computerChoice=="rock" || 
              humanChoice==="scissors" && computerChoice=="paper") {
-    console.log("You win :)");
+    resultsText.textContent="You won :)";
     humanPoints++;
   } else if (humanChoice==="rock"     && computerChoice=="paper" || 
              humanChoice==="paper"    && computerChoice=="scissors" || 
              humanChoice==="scissors" && computerChoice=="rock") {
-    console.log("Unlucky :(");
+    resultsText.textContent="Unlucky :(";
     computerPoints++;
   } 
+  results.appendChild(resultsText); // Display winner on screen
+}
+
+// playAgain function
+playAgain = function(button){
+    const againButton=document.createElement("button");
+    results.appendChild(againButton);
+    againButton.textContent="Play again?";
+
+    againButton.addEventListener("click", function (e) {
+        results.removeChild(results.firstChild);
+        results.removeChild(results.firstChild);
+        results.removeChild(results.firstChild);
+        
+    button.setAttribute("class", "button-unclicked");
+    letsPlay=true;
+    });
 }
 
 buttons.forEach((button) => {
     button.addEventListener("click", function (e) {
-        e.target.setAttribute("class", "button-clicked"); // Update button formatting
-        humanChoice=e.target.getAttribute("id"); // Get humanChoice as variable from button
-
-        playRound(humanChoice); // run playRound function
+        if (letsPlay===true) { 
+          e.target.setAttribute("class", "button-clicked"); // Update button formatting
+          humanChoice=e.target.getAttribute("id"); // Get humanChoice as variable from button
+          letsPlay=false;
+          
+          playRound(humanChoice); // run playRound function
+          playAgain(e.target);
+        }
     });
   });
 

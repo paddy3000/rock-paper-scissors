@@ -1,10 +1,9 @@
-h1 {
+* {
     text-align: center;
 }
 
 p {
     text-align: center;
-    font-size: larger;
 }
 
 /* Buttons container */
@@ -24,8 +23,15 @@ button {
 }
 
 /* Clicked button */
+.button-unclicked {
+    background-color: lightblue;
+    color: black;
+    font-weight: normal;
+}
+
 .button-clicked {
     background-color: blueviolet;
     color: white;
     font-weight: bold;
 }
+
