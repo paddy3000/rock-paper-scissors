@@ -1,5 +1,6 @@
 * {
     text-align: center;
+    font-family: sans-serif;
 }
 
 p {
@@ -21,13 +22,13 @@ button {
     flex: 1;
     font-size: large;
     max-width: 200px;
+    border-radius: 10px;
 }
 
 /* Clicked button */
 .button-clicked,
 .button-unclicked {
     padding: 20px;
-    border-radius: 10px;
 }
 .button-unclicked {
     background-color: lightblue;
@@ -39,4 +40,26 @@ button {
     background-color: blueviolet;
     color: white;
     font-weight: bold;
+}
+
+#again-button {
+    padding: 10px;
+}
+
+/* Running total */
+.runningTotal {
+    padding: 10px;
+    font-weight: bold;
+}
+
+.drawing {
+    background-color: lightblue;
+}
+
+.winning {
+    background-color: lightgreen;
+}
+
+.losing {
+    background-color: lightcoral;
 }
