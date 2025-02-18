@@ -30,15 +30,12 @@ button {
 .button-unclicked {
     padding: 20px;
 }
+
 .button-unclicked {
-    background-color: lightblue;
-    color: black;
-    font-weight: normal;
 }
 
 .button-clicked {
-    background-color: blueviolet;
-    color: white;
+    background-color: lightblue;
     font-weight: bold;
 }
 
@@ -49,7 +46,8 @@ button {
 /* Running total */
 .runningTotal {
     padding: 10px;
-    font-weight: bold;
+    margin: 0 auto;
+    width: 800px;
 }
 
 .drawing {

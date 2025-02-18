@@ -64,7 +64,7 @@ playAgain = function(button){
 runningTotal = function() {
     const runningTotal=document.querySelector(".runningTotal");
     const runningTotalText=document.querySelector(".runningTotalText");
-    runningTotalText.textContent=playerName + "'s score: " + playerPoints + ", Paddy's score: " + computerPoints;
+    runningTotalText.innerHTML=playerName + "'s score: <b>" + playerPoints + "</b>, Paddy's score: <b>" + computerPoints + "</b>";
 
     if (playerPoints>computerPoints) {
         runningTotalText.setAttribute("class", "runningTotalText winning");
