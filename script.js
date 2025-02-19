@@ -9,6 +9,7 @@ let letsPlay=true;
 let playerPoints=0;
 let computerPoints=0;
 let playerName=prompt("What is your name?");
+playerName=playerName||"Player";
 
 // playRound function
 playRound = function(playerChoice) {
@@ -51,12 +52,9 @@ playAgain = function(button){
     againButton.setAttribute("id", "again-button")
 
     againButton.addEventListener("click", function (e) {
-        results.removeChild(results.firstChild);
-        results.removeChild(results.firstChild);
-        results.removeChild(results.firstChild);
-        
-    button.setAttribute("class", "button-unclicked");
-    letsPlay=true;
+      results.innerHTML="";
+      button.setAttribute("class", "button-unclicked");
+      letsPlay=true;
     });
 }
 
